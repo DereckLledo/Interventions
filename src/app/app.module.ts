@@ -13,18 +13,19 @@ import { RouterModule } from '@angular/router';
 import { PrenomComponent } from './prenom/prenom.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
     ProblemeComponent,
-    PrenomComponent,
-    ReactiveFormsModule
+    PrenomComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

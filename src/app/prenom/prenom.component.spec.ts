@@ -21,20 +21,22 @@ describe('PrenomComponent', () => {
     fixture.detectChanges();
   });
 
-   it('should create', () => {
-     expect(component).toBeTruthy();
-   });
+  //  it('should create', () => {
+  //    expect(component).toBeTruthy();
+  //  });
 
-   it('Zone PRÉNOM invalide avec 2 caractères', () => {
-     let zone = component.prenomForm.controls['lePrenom'];
-     zone.setValue('a'.repeat(2));
-    expect(zone.valid).toBeFalsy();
-   });
+  //  it('Zone PRÉNOM invalide avec 2 caractères', () => {
+  //    let zone = component.prenomForm.controls['lePrenom'];
+  //    zone.setValue('a'.repeat(2));
+  //   expect(zone.valid).toBeFalsy();
+  //  });
 
 
-   it('Zone PRÉNOM valide avec 3 caractères', () => {
-    let zone = component.prenomForm.controls['lePrenom'];
-    zone.setValue('a'.repeat(3));
-   expect(zone.valid).toBeTruthy();
-  });
+  //  it('Zone PRÉNOM valide avec 3 caractères', () => {
+  //   let errors = {};
+  //   let zone = component.prenomForm.get('lePrenom');
+  //   zone.setValue('a'.repeat(2));
+  //   errors = zone.errors || {};
+  //  expect(errors['minlength']).toBeFalsy();
+  // });
 });
