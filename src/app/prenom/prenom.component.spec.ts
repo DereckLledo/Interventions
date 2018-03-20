@@ -29,6 +29,12 @@ describe('PrenomComponent', () => {
      let zone = component.prenomForm.controls['lePrenom'];
      zone.setValue('a'.repeat(2));
     expect(zone.valid).toBeFalsy();
-
    });
+
+
+   it('Zone PRÉNOM valide avec 3 caractères', () => {
+    let zone = component.prenomForm.controls['lePrenom'];
+    zone.setValue('a'.repeat(3));
+   expect(zone.valid).toBeTruthy();
+  });
 });
