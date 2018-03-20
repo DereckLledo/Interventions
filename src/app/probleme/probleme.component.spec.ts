@@ -34,12 +34,17 @@ describe('ProblemeComponent', () => {
    it ('Zone PRÉNOM valide avec 3 caractères', () => {
      let errors = {};
      let zone = component.problemeForm.get('lePrenom');
-     zone.setValue('a'.repeat(2));
+     zone.setValue('a'.repeat(3));
      errors = zone.errors || {};
-     expect(errors['minlength']).toBeTruthy();
+     expect(errors['minlength']).toBeFalsy();
    })
 
    it ('Zone PRÉNOM valide avec 200 caractères', () => {
+    let errors = {};
+    let zone = component.problemeForm.controls['lePrenom'];
+    zone.setValue('a'.repeat(200));
+    errors = zone.errors || {};
+    expect(errors['minlength']).toBeFalsy();
 
    })
   
