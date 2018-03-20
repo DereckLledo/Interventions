@@ -38,5 +38,9 @@ describe('ProblemeComponent', () => {
      errors = zone.errors || {};
      expect(errors['minlength']).toBeTruthy();
    })
+
+   it ('Zone PRÉNOM valide avec 200 caractères', () => {
+
+   })
   
 });
