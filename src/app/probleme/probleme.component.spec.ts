@@ -53,7 +53,7 @@ describe('ProblemeComponent', () => {
     let zone = component.problemeForm.controls['lePrenom'];
     zone.setValue('');
     errors = zone.errors || {};
-    expect(errors['minlength']).toBeUndefined();
+    expect(errors['required']).toBeTruthy();
 
    })
 
