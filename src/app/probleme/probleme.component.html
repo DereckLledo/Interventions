@@ -9,18 +9,20 @@
       <h5 class="card-title">Veuillez renseigner les zones suivante et soumettre votre demande</h5>
       <div class="card-text">
 
-        <form class="form-horizontal" 
-        novalidate
-         (ngSubmit)="save()" 
-         [formGroup]="produitForm">
+        <form class="form-horizontal" novalidate (ngSubmit)="save()" [formGroup]="problemeForm">
           <div class="form-group row">
             <label for="PrenomId" class="col-md-2 col-form-label text-right">Prénom :</label>
             <div class="col-md-10">
-              <input class="form-control" 
-              id="PrenomId" 
-              type="text" 
-              placeholder="Votre prénom ici (obligatoire)" 
-              formControlName="lePrenom" />
+              <input class="form-control" id="PrenomId" type="text" placeholder="Votre prénom ici (obligatoire)" formControlName="lePrenom" 
+              [ngClass]="{'is-invalid': (problemeForm.get('lePrenom').touched || problemeForm.get('lePrenom').dirty) &&!problemeForm.get('lePrenom').valid,
+                'is-valid': (problemeForm.get('lePrenom').touched || problemeForm.get('lePrenom').dirty) && problemeForm.get('lePrenom').valid}"/>
+              <span class="form-text" *ngIf="(problemeForm.get('lePrenom').touched || problemeForm.get('lePrenom').dirty)&& problemeForm.get('lePrenom').errors">
+                <span *ngIf="problemeForm.get('lePrenom').errors.minlength">
+                    <small class="text-muted">
+                      Indiquer au moins 3 caractères.
+                    </small>
+                </span>
+              </span>
             </div>
           </div>
         </form>
