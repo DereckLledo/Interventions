@@ -47,5 +47,21 @@ describe('ProblemeComponent', () => {
     expect(errors['minlength']).toBeFalsy();
 
    })
+
+   it ('Zone PRÉNOM invalide avec aucune valeur', () => {
+
+   })
+
+   it ('Zone PRÉNOM invalide avec 1 caractère', () => {
+     
+  })
+
+  it ('Zone PRÉNOM valide avec 50 espaces', () => {
+     
+  })
+
+  it ('Zone PRÉNOM valide avec 2 espaces et 1 caractère', () => {
+     
+  })
   
 });
