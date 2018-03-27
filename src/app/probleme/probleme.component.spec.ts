@@ -58,7 +58,11 @@ describe('ProblemeComponent', () => {
    })
 
    it ('Zone PRÉNOM invalide avec 1 caractère', () => {
-     
+    let errors = {};
+    let zone = component.problemeForm.controls['lePrenom'];
+    zone.setValue('a');
+    errors = zone.errors || {};
+    expect(errors['minlength']).toBeTruthy();
   })
 
   it ('Zone PRÉNOM valide avec 50 espaces', () => {
