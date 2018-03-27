@@ -19,5 +19,13 @@ describe('sansEspaces Validator', () => {
 
     })
 
+    it("une phrase avec des mots est valide", () => {
+        let control = {value: "Voici une phrase avec des mots."};
+        let validator = sansEspaceValidator.plage();
+        let result = validator(control as AbstractControl);
+        expect(result['plage']).toBe(true);
+
+    })
+
 
 });
