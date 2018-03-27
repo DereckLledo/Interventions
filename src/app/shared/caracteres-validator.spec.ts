@@ -11,5 +11,13 @@ describe('sansEspaces Validator', () => {
 
     })
 
+    it("une chaîne avec 10 espaces est invalide", () => {
+        let control = {value: ' '.repeat(10)};
+        let validator = sansEspaceValidator.plage();
+        let result = validator(control as AbstractControl);
+        expect(result['plage']).toBe(false);
+
+    })
+
 
 });
