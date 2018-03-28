@@ -36,3 +36,15 @@ describe('sansEspaces Validator', () => {
 
 
 });
+
+describe('longueurMinimum Validator', () => {
+
+    it("une expression avec 1 espace et 2 caractère est invalide. ", () => {
+        let control = {value: ' xx'};
+        let validator = sansEspaceValidator.longueurMinimum(3);
+        let result = validator(control as AbstractControl);
+        expect(result['espaces']).toBe(false);
+    })
+
+
+});
