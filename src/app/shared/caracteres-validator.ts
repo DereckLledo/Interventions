@@ -8,10 +8,10 @@ export class sansEspaceValidator {
 
             if ((c.value || "").trim().length === 0) {
 
-                return { 'espaces': false }
+                return { 'sansEspaces': false }
 
             } else {
-                return { 'espaces': true };
+                return { 'sansEspaces': true };
             }
 
 
@@ -24,10 +24,10 @@ export class sansEspaceValidator {
 
             if ((c.value || "").trim().length < min) {
 
-                return { 'espaces': false }
+                return { 'sansEspaces': false }
 
             } else {
-                return { 'espaces': true };
+                return { 'sansEspaces': true };
             }
 
         }

@@ -7,7 +7,7 @@ describe('sansEspaces Validator', () => {
         let control = {value: ''};
         let validator = sansEspaceValidator.espaces();
         let result = validator(control as AbstractControl);
-        expect(result['espaces']).toBe(false);
+        expect(result['sansEspaces']).toBe(false);
 
     })
 
@@ -15,7 +15,7 @@ describe('sansEspaces Validator', () => {
         let control = {value: ' '.repeat(10)};
         let validator = sansEspaceValidator.espaces();
         let result = validator(control as AbstractControl);
-        expect(result['espaces']).toBe(false);
+        expect(result['sansEspaces']).toBe(false);
 
     })
 
@@ -23,7 +23,7 @@ describe('sansEspaces Validator', () => {
         let control = {value: "Voici une phrase avec des mots."};
         let validator = sansEspaceValidator.espaces();
         let result = validator(control as AbstractControl);
-        expect(result['espaces']).toBe(true);
+        expect(result['sansEspaces']).toBe(true);
     })
 
     
@@ -31,7 +31,7 @@ describe('sansEspaces Validator', () => {
         let control = {value: "   Il y a 3 espaces au début et à la fin de la phrase.   "};
         let validator = sansEspaceValidator.espaces();
         let result = validator(control as AbstractControl);
-        expect(result['espaces']).toBe(true);
+        expect(result['sansEspaces']).toBe(true);
     })
 
 
@@ -43,8 +43,17 @@ describe('longueurMinimum Validator', () => {
         let control = {value: ' xx'};
         let validator = sansEspaceValidator.longueurMinimum(3);
         let result = validator(control as AbstractControl);
-        expect(result['espaces']).toBe(false);
+        expect(result['sansEspaces']).toBe(false);
     })
+
+    it("une expression avec 2 espaces et 1 caractère est invalide. ", () => {
+        let control = {value: '  x'};
+        let validator = sansEspaceValidator.longueurMinimum(3);
+        let result = validator(control as AbstractControl);
+        expect(result['sansEspaces']).toBe(false);
+    })
+
+    
 
 
 });
