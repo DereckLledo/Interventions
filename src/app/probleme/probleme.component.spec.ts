@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ProblemeComponent } from './probleme.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CategorieService } from './categorie.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ProblemeComponent', () => {
   let component: ProblemeComponent;
@@ -9,8 +11,9 @@ describe('ProblemeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, AngularFontAwesomeModule], //ajouté
-      declarations: [ ProblemeComponent ]
+      imports: [ReactiveFormsModule, AngularFontAwesomeModule, HttpClientModule], //ajouté
+      declarations: [ ProblemeComponent ],
+      providers:[CategorieService]
     })
     .compileComponents();
   }));
@@ -82,6 +85,30 @@ describe('ProblemeComponent', () => {
     zone.setValue('  a');
     errors = zone.errors || {};
     expect(errors['sansEspaces']).toBe(false);
+  })
+
+  it ('Zone TELEPHONE est désactivée quand ne pas me notifier', () => {
+
+  })
+
+  it ('Zone TELEPHONE est vide quand ne pas me notifier', () => {
+
+  })
+
+  it ('Zone ADRESSE COURRIEL est désactivée quand ne pas me notifier', () => {
+
+  })
+
+  it ('Zone ADRESSE COURRIEL est vide quand ne pas me notifier',() => {
+
+  })
+
+  it ('Zone CONFIRMER COURRIEL est désactivée quand ne pas me notifier',() => {
+
+  })
+
+  it ('Zone CONFIRMER COURRIEL est vide quand ne pas me notifier',() => {
+
   })
   
 });
