@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CategorieData } from './probleme/probleme-data';
 import { CategorieService } from './probleme/categorie.service';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { CategorieService } from './probleme/categorie.service';
     AppRoutingModule,
     AngularFontAwesomeModule,
     ReactiveFormsModule,
+    HttpModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(CategorieData, {delay: 1000})
   ],

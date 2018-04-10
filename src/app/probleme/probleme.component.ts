@@ -22,7 +22,12 @@ export class ProblemeComponent implements OnInit {
     this.problemeForm = this.fb.group({
      lePrenom: ['',[sansEspaceValidator.longueurMinimum(3), Validators.required]],
      noTypeProbleme: ['',[Validators.required]],
-     leNom:['',[sansEspaceValidator.longueurMinimum(3), Validators.required]]
+     leNom:['',[sansEspaceValidator.longueurMinimum(3), Validators.required]],
+     notification:['sansNotifications'],
+     notificationsGroup: this.fb.group({
+         telephone:[{value: '',disabled: true}]
+       })
+      
       //lePrenom: ['',[Validators.minLength(3),Validators.required]]
 
     });
@@ -31,6 +36,12 @@ export class ProblemeComponent implements OnInit {
     this.categories.obtenirCategories()
     .subscribe(cat => this.categoriesProblemes = cat,
                error => this.errorMessage = <any>error);  
+
+  }
+
+  appliquerNotifications(): void {
+    const notificationControl = this.problemeForm.get('notificationsGroup.telephone');
+    notificationControl.disable();
 
   }
 
