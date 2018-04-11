@@ -96,19 +96,21 @@ describe('ProblemeComponent', () => {
 
   it ('Zone TELEPHONE est vide quand ne pas me notifier', () => {
     component.appliquerNotifications('pasNotification');
-
     let zone = component.problemeForm.get('notificationsGroup.telephone');
-    zone.setValue('');
     
+    expect(zone.value).toBeNull();
+  })
+
+
+
+  it ('Zone ADRESSE COURRIEL est désactivée quand ne pas me notifier', () => {
+    component.appliquerNotifications('pasNotification');
+
+    let zone = component.problemeForm.get('notificationsGroup.courriel');
     expect(zone.status).toEqual('DISABLED');
   })
-
-
+  
 /*
-  it ('Zone ADRESSE COURRIEL est désactivée quand ne pas me notifier', () => {
-
-  })
-
   it ('Zone ADRESSE COURRIEL est vide quand ne pas me notifier',() => {
 
   })

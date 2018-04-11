@@ -29,9 +29,6 @@ export class ProblemeComponent implements OnInit {
          courriel:[{value: '',disabled: true}],
          confCourriel:[{value: '',disabled: true}],
        })
-      
-      //lePrenom: ['',[Validators.minLength(3),Validators.required]]
-
     });
 
     
