@@ -92,15 +92,19 @@ describe('ProblemeComponent', () => {
     let zone = component.problemeForm.get('notificationsGroup.telephone');
     expect(zone.status).toEqual('DISABLED');
   })
-  
-/*
+
+
   it ('Zone TELEPHONE est vide quand ne pas me notifier', () => {
     component.appliquerNotifications('pasNotification');
 
     let zone = component.problemeForm.get('notificationsGroup.telephone');
+    zone.setValue('');
+    
     expect(zone.status).toEqual('DISABLED');
   })
 
+
+/*
   it ('Zone ADRESSE COURRIEL est désactivée quand ne pas me notifier', () => {
 
   })

@@ -43,12 +43,18 @@ export class ProblemeComponent implements OnInit {
 
   appliquerNotifications(typeNotification: string): void {
     const telControl = this.problemeForm.get('notificationsGroup.telephone');
+    telControl.clearValidators();
+    telControl.reset();
     telControl.disable();
 
     const courrielControl = this.problemeForm.get('notificationsGroup.courriel');
+    courrielControl.clearValidators();
+    courrielControl.reset();
     courrielControl.disable();
 
     const confCourrielControl = this.problemeForm.get('notificationsGroup.confCourriel');
+    confCourrielControl.clearValidators();
+    confCourrielControl.reset();
     confCourrielControl.disable();
     
 
@@ -62,7 +68,8 @@ export class ProblemeComponent implements OnInit {
     }
 
     telControl.updateValueAndValidity();
-
+    courrielControl.updateValueAndValidity();
+    confCourrielControl.updateValueAndValidity();
     
   }
 
