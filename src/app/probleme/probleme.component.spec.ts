@@ -24,9 +24,6 @@ describe('ProblemeComponent', () => {
     fixture.detectChanges();
   });
 
-    it('should create', () => {
-     expect(component).toBeTruthy();
-    });
 
    it ('Zone PRÉNOM invalide avec 2 caractères', () => {
     let errors = {};
@@ -90,14 +87,18 @@ describe('ProblemeComponent', () => {
 
   
   it ('Zone TELEPHONE est désactivée quand ne pas me notifier', () => {
-    component.appliquerNotifications();
+    component.appliquerNotifications('pasNotification');
 
     let zone = component.problemeForm.get('notificationsGroup.telephone');
     expect(zone.status).toEqual('DISABLED');
   })
+  
 /*
   it ('Zone TELEPHONE est vide quand ne pas me notifier', () => {
+    component.appliquerNotifications('pasNotification');
 
+    let zone = component.problemeForm.get('notificationsGroup.telephone');
+    expect(zone.status).toEqual('DISABLED');
   })
 
   it ('Zone ADRESSE COURRIEL est désactivée quand ne pas me notifier', () => {

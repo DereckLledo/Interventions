@@ -23,9 +23,11 @@ export class ProblemeComponent implements OnInit {
      lePrenom: ['',[sansEspaceValidator.longueurMinimum(3), Validators.required]],
      noTypeProbleme: ['',[Validators.required]],
      leNom:['',[sansEspaceValidator.longueurMinimum(3), Validators.required]],
-     notification:['sansNotifications'],
+     notification:['pasNotification'],
      notificationsGroup: this.fb.group({
-         telephone:[{value: '',disabled: true}]
+         telephone:[{value: '',disabled: true}],
+         courriel:[{value: '',disabled: true}],
+         confCourriel:[{value: '',disabled: true}],
        })
       
       //lePrenom: ['',[Validators.minLength(3),Validators.required]]
@@ -39,10 +41,29 @@ export class ProblemeComponent implements OnInit {
 
   }
 
-  appliquerNotifications(): void {
-    const notificationControl = this.problemeForm.get('notificationsGroup.telephone');
-    notificationControl.disable();
+  appliquerNotifications(typeNotification: string): void {
+    const telControl = this.problemeForm.get('notificationsGroup.telephone');
+    telControl.disable();
 
+    const courrielControl = this.problemeForm.get('notificationsGroup.courriel');
+    courrielControl.disable();
+
+    const confCourrielControl = this.problemeForm.get('notificationsGroup.confCourriel');
+    confCourrielControl.disable();
+    
+
+    if (typeNotification === "ParTelephone") {
+      telControl.enable();
+    }
+
+   if (typeNotification === "ParCourriel") {
+      confCourrielControl.enable();
+      courrielControl.enable();
+    }
+
+    telControl.updateValueAndValidity();
+
+    
   }
 
 }

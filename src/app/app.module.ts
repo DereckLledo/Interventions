@@ -27,8 +27,8 @@ import { HttpModule } from '@angular/http';
     AppRoutingModule,
     AngularFontAwesomeModule,
     ReactiveFormsModule,
-    HttpModule,
     HttpClientModule,
+    HttpModule,
     HttpClientInMemoryWebApiModule.forRoot(CategorieData, {delay: 1000})
   ],
   providers: [CategorieService],
