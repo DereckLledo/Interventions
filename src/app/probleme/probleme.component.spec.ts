@@ -118,13 +118,19 @@ describe('ProblemeComponent', () => {
     expect(zone.value).toBeNull();
   })
 
-/*
-  it ('Zone CONFIRMER COURRIEL est désactivée quand ne pas me notifier',() => {
 
+  it ('Zone CONFIRMER COURRIEL est désactivée quand ne pas me notifier',() => {
+    component.appliquerNotifications('pasNotification');
+
+    let zone = component.problemeForm.get('notificationsGroup.confCourriel');
+    expect(zone.status).toEqual('DISABLED');
   })
 
   it ('Zone CONFIRMER COURRIEL est vide quand ne pas me notifier',() => {
-
+    component.appliquerNotifications('pasNotification');
+    let zone = component.problemeForm.get('notificationsGroup.confCourriel');
+    
+    expect(zone.value).toBeNull();
   })
-  */
+  
 });
